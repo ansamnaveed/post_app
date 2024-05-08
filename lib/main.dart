@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:post_app/View/splash_screen.dart';
+import 'package:posts/View/splash_screen.dart';
+import 'package:posts/utils/constants/app_strings.dart';
 
 void main() {
   runApp(
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Post App',
+      title: StringConstant.app_name,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

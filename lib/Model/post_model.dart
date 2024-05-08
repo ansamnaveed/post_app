@@ -4,12 +4,12 @@ class Post {
   int? typeId;
   int? payType;
   int? price;
-  String? currency;
+  var currency;
   int? status;
   String? website;
   int? isPromote;
   int? promotDuration;
-  String? campaignType;
+  var campaignType;
   String? campDate;
   String? campTime;
   String? description;
@@ -26,51 +26,52 @@ class Post {
   int? laqtaCoins;
   String? postTitle;
   int? displaySaltaries;
-  String? content;
+  var content;
   List<Images>? images;
   int? likes;
   int? shares;
   int? comments;
   int? offers;
   String? type;
-  List<Null>? survey;
+  var survey;
 
-  Post(
-      {this.postId,
-      this.userId,
-      this.typeId,
-      this.payType,
-      this.price,
-      this.currency,
-      this.status,
-      this.website,
-      this.isPromote,
-      this.promotDuration,
-      this.campaignType,
-      this.campDate,
-      this.campTime,
-      this.description,
-      this.postVideo,
-      this.hashtags,
-      this.hashtagTitles,
-      this.postType,
-      this.profileImage,
-      this.name,
-      this.countryId,
-      this.country,
-      this.flag,
-      this.currencyFlag,
-      this.laqtaCoins,
-      this.postTitle,
-      this.displaySaltaries,
-      this.content,
-      this.images,
-      this.likes,
-      this.shares,
-      this.comments,
-      this.offers,
-      this.type,
-      this.survey});
+  Post({
+    this.postId,
+    this.userId,
+    this.typeId,
+    this.payType,
+    this.price,
+    this.currency,
+    this.status,
+    this.website,
+    this.isPromote,
+    this.promotDuration,
+    this.campaignType,
+    this.campDate,
+    this.campTime,
+    this.description,
+    this.postVideo,
+    this.hashtags,
+    this.hashtagTitles,
+    this.postType,
+    this.profileImage,
+    this.name,
+    this.countryId,
+    this.country,
+    this.flag,
+    this.currencyFlag,
+    this.laqtaCoins,
+    this.postTitle,
+    this.displaySaltaries,
+    this.content,
+    this.images,
+    this.likes,
+    this.shares,
+    this.comments,
+    this.offers,
+    this.type,
+    this.survey,
+  });
 
   Post.fromJson(Map<String, dynamic> json) {
     postId = json['post_id'];
@@ -78,12 +79,12 @@ class Post {
     typeId = json['type_id'];
     payType = json['pay_type'];
     price = json['price'];
-    currency = json['currency'];
+    currency = json['currency'].toString();
     status = json['status'];
     website = json['website'];
     isPromote = json['is_promote'];
     promotDuration = json['promot_duration'];
-    campaignType = json['campaign_type'];
+    campaignType = json['campaign_type'].toString();
     campDate = json['camp_date'];
     campTime = json['camp_time'];
     description = json['description'];
@@ -112,12 +113,13 @@ class Post {
     comments = json['comments'];
     offers = json['offers'];
     type = json['type'];
-    if (json['survey'] != null) {
-      survey = <Null>[];
-      json['survey'].forEach((v) {
-        survey!.add(v);
-      });
-    }
+    survey = json['survey'].toString();
+    // if (json['survey'] != null) {
+    //   survey = [];
+    //   json['survey']!.forEach((v) {
+    //     survey!.add(v);
+    //   });
+    // }
   }
 
   Map<String, dynamic> toJson() {

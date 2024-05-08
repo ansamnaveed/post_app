@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:post_app/View/nav_bar.dart';
+import 'package:posts/Controller/posts_controller.dart';
+import 'package:posts/View/nav_bar.dart';
+import 'package:posts/utils/constants/app_strings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,6 +16,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    Get.put(PostsController()).getPosts();
     Timer(
       Duration(seconds: 3),
       () {
@@ -41,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
         child: Center(
           child: Text(
-            "Posts App",
+            StringConstant.app_name,
             style: TextStyle(
               fontSize: 24,
               color: Colors.white,

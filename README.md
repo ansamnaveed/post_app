@@ -1,4 +1,4 @@
-# post_app
+# posts
 
 A new Flutter project.
 
